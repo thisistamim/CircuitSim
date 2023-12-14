@@ -10,6 +10,7 @@ function App() {
         src={url}
         title="No content"
       ></iframe>
+      <div className="logo"></div>
     </div>
   );
 }
