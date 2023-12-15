@@ -1,16 +1,23 @@
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
   const url = 'https://www.falstad.com/circuit/circuitjs.html';
+  const [showLogo, setShowLogo] = useState(false);
+
+  const handleFrameLoad = () => {
+    setShowLogo(true);
+  };
 
   return (
     <div id="root">
       <iframe
-        style={{ outline: 'none', border: 'none', width: '100%', height: '100vh' }}
+        className="iframe"
         src={url}
-        title="No content"
-      ></iframe>
-      <div className="logo"></div>
+        title="CircuitSim"
+        onLoad={handleFrameLoad}
+      />
+      {showLogo && <div className="logo" />}
     </div>
   );
 }
