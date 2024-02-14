@@ -1,0 +1,15 @@
+Options -MultiViews
+RewriteEngine On
+
+# Remove trailing slash and redirect
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Check for existence of HTML file and serve
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# Error pages
+ErrorDocument 404 /error404.html
+ErrorDocument 500 /error500.html
