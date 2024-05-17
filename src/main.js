@@ -10,12 +10,12 @@ $(document).ready(function () {
     var spanElement = $("<span>").text("Welcome to SPDI");
     h1Element.append(spanElement);
 
-    var designedByP = $("<p>").text("Designed by Tamim Ahmad.");
+    var designedByP = $("<p>").text("Designed by Tamim Ahmmad.");
     var loadingP = $("<p>").addClass("loading");
     var loadingImg = $("<img>").attr({
         "src": "./src/img/loading.gif",
         "draggable": false,
-        "alt": "Loading..."
+        "alt": "..."
     });
 
     loadingP.append(loadingImg);
